@@ -18,6 +18,11 @@
   </include>
 
   <!-- Oh, you wanted a robot? -->
-  <include file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml" />
+  <!-- manually change the location of fetch start location -->
+  <include file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml">
+    <arg name="x" value="2.250" />
+    <arg name="y" value="3.118" />
+    <arg name="z" value="0.0" />
+  </include>
 
 </launch>
