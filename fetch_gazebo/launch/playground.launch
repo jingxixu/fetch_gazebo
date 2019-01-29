@@ -6,6 +6,10 @@
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
+  <arg name="x" default="2.250" />
+  <arg name="y" default="3.118" />
+  <arg name="z" default="0.0" />
+
 
   <!-- Start Gazebo with a blank world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -20,9 +24,9 @@
   <!-- Oh, you wanted a robot? -->
   <!-- manually change the location of fetch start location -->
   <include file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml">
-    <arg name="x" value="2.250" />
-    <arg name="y" value="3.118" />
-    <arg name="z" value="0.0" />
+    <arg name="x" value="$(arg x)" />
+    <arg name="y" value="$(arg y)" />
+    <arg name="z" value="$(arg z)" />
   </include>
 
 </launch>
